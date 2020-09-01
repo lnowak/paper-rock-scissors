@@ -93,3 +93,17 @@ button {
 .chcecked {
     background-color: red;
 }
+
+.resume {
+    position: fixed;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
+    z-index: 1;
+    background:rgb(255,255,255);
+    padding-top: 5%;
+    padding-bottom: 5%;
+}

@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let score2Number = Number(score2.innerText);
     let Player1Choice;
     let Player2Choice;
+    let resume = document.querySelector('.resume');
+    const newGame = document.querySelector('.newGame');
 
     selectBtn.forEach(e => {
         e.addEventListener('click', () => {
@@ -64,11 +66,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 playGame();
             }
 
-            if (score1Number === maxRoundNumber) {
-                console.log('Player 1 won');
+            if (score1Number === maxRoundNumber) { 
+                resume.style.display = 'flex'
+                resume.children[0].children[0].innerText = 'Player 1 won'
             } else if (score2Number === maxRoundNumber) {
-                console.log('Player 2 won');
+                resume.style.display = 'flex'
+                resume.children[0].children[0].innerText = 'Player 2 won'
             }
         })
     })
+
+    newGame.addEventListener('click', () => {
+        score1Number = 0;
+        score2Number = 0;
+        score1.innerText = 0;
+        score2.innerText = 0;
+        counter = 0;
+        player = 0;
+        maxRoundNumber = 0;
+        resume.style.display = 'none';
+        preFullScreen.style.display = 'flex';
+    })
+    
 })
